@@ -1,0 +1,27 @@
+{
+  "snapshot_date": "2026-09-04",
+  "restaurant_count": 7633,
+  "award_counts": {
+    "1-star": 3181,
+    "2-stars": 547,
+    "3-stars": 162,
+    "bib-gourmand": 3743
+  },
+  "country_count": 52,
+  "city_count": 2779,
+  "missing_counts": {
+    "id": 0,
+    "name": 0,
+    "country": 0,
+    "city": 0,
+    "location_raw": 0,
+    "address": 0,
+    "cuisine": 0,
+    "award": 0,
+    "price_symbols": 0,
+    "longitude": 0,
+    "latitude": 0,
+    "source_url": 0,
+    "snapshot_date": 0
+  }
+}

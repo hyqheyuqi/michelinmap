@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="探索全球米其林必比登与星级餐厅城市。" />
+    <title>米其林城市地图</title>
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://tile.openstreetmap.org" />
+    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=11" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="返回全球地图">
+          <span>
+            <strong>米其林城市地图</strong>
+            <small>MICHELIN CITIES</small>
+          </span>
+        </a>
+        <div class="search-wrap">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="city-search" type="search" placeholder="搜索城市、国家或餐厅" autocomplete="off" />
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+        <div class="filter-shell">
+          <button class="filter-toggle" id="filter-toggle" aria-expanded="false">筛选 <span>⌄</span></button>
+          <section class="filter-popover" id="filter-popover" hidden>
+            <div class="filter-heading"><strong>筛选餐厅</strong><button id="filter-reset">重置</button></div>
+            <fieldset>
+              <legend>荣誉</legend>
+              <label><input type="checkbox" name="award" value="bib-gourmand" checked />必比登</label>
+              <label><input type="checkbox" name="award" value="1-star" checked />1 星</label>
+              <label><input type="checkbox" name="award" value="2-stars" checked />2 星</label>
+              <label><input type="checkbox" name="award" value="3-stars" checked />3 星</label>
+            </fieldset>
+            <fieldset>
+              <legend>价格等级</legend>
+              <label><input type="checkbox" name="price" value="1" checked />$</label>
+              <label><input type="checkbox" name="price" value="2" checked />$$</label>
+              <label><input type="checkbox" name="price" value="3" checked />$$$</label>
+              <label><input type="checkbox" name="price" value="4" checked />$$$$</label>
+            </fieldset>
+            <label class="cuisine-filter">
+              <span>菜系</span>
+              <div class="cuisine-search-wrap">
+                <input id="cuisine-filter" type="search" list="cuisine-options" placeholder="搜索菜系" autocomplete="off" />
+                <datalist id="cuisine-options"></datalist>
+              </div>
+            </label>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <div id="map" aria-label="全球米其林城市地图"></div>
+
+        <section class="hero-card" id="hero-card">
+          <p class="eyebrow">世界餐桌，一张地图</p>
+          <h1>从一座城开始，<br />寻找下一顿值得奔赴的料理。</h1>
+          <p class="hero-copy">从全球聚合逐级展开区域、城市与餐厅，查看每家餐厅的精确位置和详细地址。</p>
+          <div class="stats">
+            <div><strong>2,779</strong><span>座城市</span></div>
+            <div><strong>7,633</strong><span>家餐厅</span></div>
+            <div><strong>52</strong><span>个国家与地区</span></div>
+          </div>
+          <button class="explore-btn" id="explore-btn">开始探索 <span>→</span></button>
+        </section>
+
+        <aside class="city-panel" id="city-panel" aria-live="polite" aria-hidden="true">
+          <button class="panel-close" id="panel-close" aria-label="关闭城市详情">×</button>
+          <div id="city-panel-content"></div>
+        </aside>
+
+        <div class="level-controls" aria-label="地图层级控制">
+          <button id="level-down" aria-label="进入下一级">＋</button>
+          <button id="level-up" aria-label="返回上一级" disabled>−</button>
+        </div>
+
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    <script src="app.js?v=25"></script>
+  </body>
+</html>

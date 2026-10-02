@@ -1,0 +1,28 @@
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python build/cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# JavaScript dependencies and build output
+node_modules/
+dist/
+build/
+
+# Local configuration, logs and temporary files
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.bak
